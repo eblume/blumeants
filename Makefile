@@ -31,6 +31,6 @@ clean:
 # TODO: Don't make these depend on $(BOTS_SRCS) because it will rebuild all
 $(BOTS_ZIPS): $(BOTS_SRCS)
 	@echo "Creating $@"
-	zip $@ $(wildcard $(dir $@)*)
+	zip -j $@ $(wildcard $(dir $@)*)
 
 
