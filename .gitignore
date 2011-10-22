@@ -1,5 +1,9 @@
 .DS_Store
 *__pycache__*
-.pyx
+*.pyc
+
 
 bots/*/*.zip
+tools/game_logs/*.replay
+tools/game_logs/*.stream
+

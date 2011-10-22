@@ -9,7 +9,11 @@ BOTS = $(notdir $(wildcard $(BOTS_DIR)*))
 BOTS_SRCS = $(wildcard $(addprefix $(BOTS_DIR),$(BOTS))/*)
 BOTS_ZIPS = $(addprefix $(BOTS_DIR), $(join $(BOTS),$(BOTS:%=/%.zip)))
 
+# Special argets that enable GNU Make features
 .SECONDEXPANSION:
+
+
+# Manual Targets:
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of:"
@@ -21,6 +25,8 @@ build: $(BOTS_ZIPS)
 
 clean:
 	-rm $(BOTS_ZIPS)
+
+# Automatic Targets (used by manual targets):
 
 # TODO: Don't make these depend on $(BOTS_SRCS) because it will rebuild all
 $(BOTS_ZIPS): $(BOTS_SRCS)
